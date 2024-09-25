@@ -1,58 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Random Bee Pun</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 50px;
-    }
-    h1 {
-      color: #FFA500;
-    }
-    p {
-      font-size: 24px;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>Your Random Bee Pun:</h1>
-  <p id="punDisplay">Fetching a random pun...</p>
-
-  <script>
-    async function fetchAndDisplayRandomPun() {
-      try {
-        // Fetch the puns.txt file from the repository
-        const response = await fetch('puns.txt'); // Make sure this file is in the same directory as index.html
-        if (!response.ok) {
-          throw new Error('Failed to load puns.');
-        }
-
-        // Get the text content from the file
-        const punsText = await response.text();
-
-        // Split the text by newline to get an array of puns
-        const punsArray = punsText.split('\n').filter(Boolean); // Filter removes any empty lines
-
-        // Select a random pun from the array
-        const randomPun = punsArray[Math.floor(Math.random() * punsArray.length)];
-
-        // Display the random pun in the <p> element with id="punDisplay"
-        document.getElementById('punDisplay').innerText = randomPun;
-
-      } catch (error) {
-        // If there's an error, display it
-        document.getElementById('punDisplay').innerText = 'Error fetching pun: ' + error.message;
-      }
-    }
-
-    // Run the function when the page loads
-    window.onload = fetchAndDisplayRandomPun;
-  </script>
-
-</body>
-</html>
+What do you call a bee that lives in America? A USBee.
+What kind of bee can’t make up its mind? A maybee.
+Why do bees hum? Because they don't know the words.
+What's a bee's favorite sport? Rug-bee.
+What do you call a bee that can't stop eating? Chub-bee.
+Why did the bee go to the doctor? Because it had hives.
+What do you get when you cross a bee with a doorbell? A hum-dinger.
+How do bees get to school? On the school buzz.
+Why are bees so healthy? Because they have lots of vitamin bee.
+Who is a bee's favorite classical composer? Bee-thoven.
+What do bees say to their partners? Honey, you're bee-autiful!
+Where do bees keep their savings? In a honey bank.
+Why was the bee's hair sticky? Because it used a honeycomb.
+What did the confused bee say? To bee or not to bee.
+What did the bee say to the flower? Hello honey!
+Why don’t bees ever get lost? They always follow their GPS (Global Pollination System).
+What's a bee's favorite flower? Bee-gonias.
+How do bees brush their hair? With honeycombs.
+Why did the queen bee go to the dentist? To get her buzz cleaned.
+Why don’t bees play cards? Because they might get stung.
+How does a bee style its hair? It uses a honeycomb.
+What did the bee say to the naughty child? Bee-have yourself!
+Why do bees have sticky hair? Because they use honeycombs.
+Why did the bee get married? Because it found its honey.
+What's a bee's favorite kind of candy? Bumble-gum.
+What’s a bee’s favorite novel? The Great Gats-bee.
+What do you call a bee that can’t fly? A want-to-bee.
+What did the bees do after they got married? They went on a honeymoon.
+How do bees propose? With a bee-autiful ring.
+Why do bees never have any money? Because they always throw it into the honeypot.
+What is a bee’s favorite dance? The waggle dance.
+Where do bees go after they are married? On their honey-moon!
+What do you call a lazy bee? A drone.
+Why did the bee sit on the flower? Because it was looking for nectar.
+What do bees do if they need a ride? Wait at the buzz stop.
+Why are bees great talkers? Because they always give you the buzz.
+What's a bee's favorite time of day? Buzz o'clock.
+What kind of bees never stop working? Worker bees.
+How do you make a bee's hair stick up? Put it in a honeycomb.
+What do you call a bee with messy hair? A frizz-bee.
+What’s a bee’s favorite drink? Buzzzzz lightyear!
+What do you get if you cross a bee with a skunk? A bee that stinks.
+How does a queen bee travel to her colony? She takes the royal jellycopter.
+What's a bee's favorite band? The Bee-tles.
+What do you call a bee who’s having a bad hair day? A buzzkill.
+Why did the bees go on strike? They wanted more honey and buzz benefits.
+How do bees stay in shape? They do buzz-ercize.
+What’s a bee’s favorite type of shape? A hexagon.
+How does a bee get a job? Through a buzzness network.
+What do you call a bee that tells jokes? A hum-comedian.
+Why are bees great philosophers? Because they know how to buzz around big ideas.
+What kind of bee loves to go to the gym? A fitness buzz.
+Why was the bee buzzing on stage? Because it was the star of the show.
+What do bees do when they’re bored? Buzz around.
+What kind of car does a bee drive? A Volks-wagen Beetle.
+What do you call a bee that can't stop making puns? Pun-bee-lievable.
+What do you get when you cross a bee and a sheep? A bah-humbug.
+Why did the bee go to art school? Because it wanted to make buzz-terpieces.
+What’s a bee’s favorite superhero? Buzz Lightyear.
+Why are bees good at chess? Because they can always make a bee-line for victory.
+What do you call a bee that’s good at spelling? A spelling bee.
+Why did the bee start a band? It wanted to be in the buzz-ness.
+What do bees do when they watch TV? They tune in for the buzz.
+What’s a bee’s favorite kind of shoe? Buzz loafers.
+Why did the bee fail the driving test? It didn’t bee-lieve in traffic laws.
+What do you call a bee that dances? A jive-bee.
+Why did the bee become a detective? It had a natural talent for un-bee-lievable discoveries.
+What kind of bee likes to eat toast? A jam-bee.
+What do bees wear in the rain? Yellow jackets.
+What kind of bee can sing? A bee-bop.
+Why do bees make great musicians? They really know how to buzz a tune.
+What do bees call their money? Buzz bucks.
+What’s a bee's favorite movie? The Sting.
+Why do bees always have sticky hair? Because they use honeycombs.
+How do you apologize to a bee? Offer a humble-bee apology.
+What’s a bee’s favorite subject in school? Buzz-iness studies.
+What do you call a bee that’s had too much coffee? A jitterbee.
+How does a bee write a letter? With bee-mail.
+Why did the bee visit the psychiatrist? It had a buzz disorder.
+What’s a bee’s favorite snack? Honey chips.
+Why did the bee make a great reporter? It was always buzzing with news.
+What’s a bee's favorite flower? Bee-daisies.
+Why was the bee wearing a crown? It was the queen bee.
+How does a bee answer the phone? It says, 'Hive there!'
+What did the bees do after work? They went to the buzz-bar.
+What’s a bee’s favorite song? 'Don’t Worry, Bee Happy!'
+What do bees use to make selfies? Hive-phones.
+Why are bees so polite? They always bee-have.
+What’s a bee’s favorite holiday? Bee-lentine’s Day.
