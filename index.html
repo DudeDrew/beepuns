@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Bee Pun</title>
+  <script>
+    async function getPunFromIFTTT() {
+      // Get the pun from IFTTT webhook payload
+      const params = new URLSearchParams(window.location.search);
+      const pun = params.get('pun');
+
+      // If we have a pun in the query string, display it
+      if (pun) {
+        document.getElementById("punDisplay").innerText = pun;
+      } else {
+        document.getElementById("punDisplay").innerText = "No pun available.";
+      }
+    }
+
+    window.onload = getPunFromIFTTT;
+  </script>
+</head>
+<body>
+  <h1>Your Random Bee Pun:</h1>
+  <p id="punDisplay">Fetching pun...</p>
+</body>
+</html>
