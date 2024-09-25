@@ -4,25 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Random Bee Pun</title>
-  <script>
-    async function getPunFromIFTTT() {
-      // Get the pun from IFTTT webhook payload
-      const params = new URLSearchParams(window.location.search);
-      const pun = params.get('pun');
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    h1 {
+      color: #FFA500;
+    }
+    p {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
 
-      // If we have a pun in the query string, display it
-      if (pun) {
-        document.getElementById("punDisplay").innerText = pun;
-      } else {
-        document.getElementById("punDisplay").innerText = "No pun available.";
+  <h1>Your Random Bee Pun:</h1>
+  <p id="punDisplay">Fetching a random pun...</p>
+
+  <script>
+    async function fetchAndDisplayRandomPun() {
+      try {
+        // Fetch the puns.txt file from the repository
+        const response = await fetch('puns.txt'); // Make sure this file is in the same directory as index.html
+        if (!response.ok) {
+          throw new Error('Failed to load puns.');
+        }
+
+        // Get the text content from the file
+        const punsText = await response.text();
+
+        // Split the text by newline to get an array of puns
+        const punsArray = punsText.split('\n').filter(Boolean); // Filter removes any empty lines
+
+        // Select a random pun from the array
+        const randomPun = punsArray[Math.floor(Math.random() * punsArray.length)];
+
+        // Display the random pun in the <p> element with id="punDisplay"
+        document.getElementById('punDisplay').innerText = randomPun;
+
+      } catch (error) {
+        // If there's an error, display it
+        document.getElementById('punDisplay').innerText = 'Error fetching pun: ' + error.message;
       }
     }
 
-    window.onload = getPunFromIFTTT;
+    // Run the function when the page loads
+    window.onload = fetchAndDisplayRandomPun;
   </script>
-</head>
-<body>
-  <h1>Your Random Bee Pun:</h1>
-  <p id="punDisplay">Fetching pun...</p>
+
 </body>
 </html>
